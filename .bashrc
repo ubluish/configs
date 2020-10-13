@@ -16,7 +16,11 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-PS1=' \[\e[94m\]\W $ \[\e[0m\]'
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PS1=" \[\e[94m\]\W \[\e[92m\]\$(parse_git_branch)\[\e[94m\] $ \[\e[0m\]"
 export GOPATH="/var/home/amr/development/go"
 export GOBIN="/var/home/amr/development/go/bin"
 
