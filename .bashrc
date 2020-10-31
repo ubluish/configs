@@ -20,7 +20,7 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
-PS1="\[\e[94m\]\w \[\e[92m\]\$(parse_git_branch)\[\e[91m\]✗\n➜ \[\e[0m\]"
+PS1="\[\e[94m\]\w \[\e[92m\]\$(parse_git_branch)\[\e[91m\]✗\n\[\e[91m\]➜ \[\e[0m\]"
 export GOPATH="/var/home/amr/development/go"
 export GOBIN="/var/home/amr/development/go/bin"
 export EDITOR=vi
